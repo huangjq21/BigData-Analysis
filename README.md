@@ -2,9 +2,7 @@
 #Author: Jinqin Huang
 
 # BigData-Analysis
-Assignments and projects for project training in 2020.
+Assignments for project training in 2020.
 
-CONTENTS:
-·Homeworks
-·Projects
+2020/01/14
 
