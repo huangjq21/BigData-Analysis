@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html style="height:100%;">
+<head>
+    <meta charset="utf-8">
+    <script src="echarts.min.js"></script>
+    <script src="china.js"></script>
+</head>
+<body style="height:100%;">
+    <div id="main" style="width:100%;height:100%;"></div>
+    <script>
+	var mydata = [
+		{name: '北京',value: 2154 },{name: '天津',value: 1560 },
+		{name: '上海',value: 2424 },{name: '重庆',value: 3102 },
+		{name: '河北',value: 7556 },{name: '河南',value: 9605 },
+		{name: '云南',value: 4830 },{name: '辽宁',value: 4359 },
+		{name: '黑龙江',value: 3773 },{name: '湖南',value: 6899 },
+		{name: '安徽',value: 6324 },{name: '山东',value: 10047 },
+		{name: '新疆',value: 2487 },{name: '江苏',value: 8051 },
+		{name: '浙江',value: 5737 },{name: '江西',value: 4648 },
+		{name: '湖北',value: 5917 },{name: '广西',value: 4926 },
+		{name: '甘肃',value: 2637 },{name: '山西',value: 3718 },
+		{name: '内蒙古',value: 2534 },{name: '陕西',value: 3864 },
+		{name: '吉林',value: 2704 },{name: '福建',value: 3941 },
+		{name: '贵州',value: 3600 },{name: '广东',value: 11346 },
+		{name: '青海',value: 603 },{name: '西藏',value: 344 },
+		{name: '四川',value: 8341 },{name: '宁夏',value: 688 },
+		{name: '海南',value: 934 },{name: '台湾',value: 2358 },
+		{name: '香港',value: 745 },{name: '澳门',value: 63 }
+	];
+
+	var option = {
+		title: {
+        text: '2018年度全国各省市人口热力图',
+            subtext: '单位（万）',
+        left: 'center',
+        textStyle: {
+            color: '#fff'
+        }
+    },
+		tooltip : {
+			trigger: 'item'
+		},
+		backgroundColor: '#404a59',
+    visualMap: {
+        min: 0,
+        max: 12000,
+        splitNumber: 5,
+        inRange: {
+            color: ['#d92d0e','#ea7a36','#ba933b'].reverse()
+        },
+        textStyle: {
+            color: '#fff'
+        }
+    },
+		series: [{
+			name: '人口总数',
+			type: 'map',
+			mapType: 'china',
+			roam: true,
+			label: {
+				normal: {
+					show: true
+				},
+				emphasis: {
+					show: false
+				}
+			},
+			data:mydata
+		}]
+	};
+	var chart = echarts.init(document.getElementById('main'));
+    chart.setOption(option);
+    </script>
+</body>
+</html>
